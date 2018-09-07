@@ -18,7 +18,9 @@ private:
 	const HRESULT m_hr;
 };
 
+#ifndef SAFE_RELEASE(p)
 #define SAFE_RELEASE(p) if (p) (p)->Release()
+#endif SAFE_RELEASE(p)
 
 inline void ThrowIfFailed(HRESULT hr)
 {

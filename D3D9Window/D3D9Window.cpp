@@ -31,6 +31,7 @@ void D3D9Window::LoadPipeline()
 
 	// Create the Direct3D API device object and a corresponding context.
 	Microsoft::WRL::ComPtr<IDirect3D9> direct3D9;
+	direct3D9 = Direct3DCreate9(D3D_SDK_VERSION);
 
 	ThrowIfFailed(direct3D9->CreateDevice(
 		D3DADAPTER_DEFAULT,
