@@ -42,14 +42,30 @@ void D3D9Window::LoadPipeline()
 		m_3dDevice.ReleaseAndGetAddressOf())
 	);
 
-	
-
+	direct3D9.Reset();
 }
 
 // Update frame-based values.
 void D3D9Window::OnUpdate()
 {
+	m_3dDevice->Clear(
+		0, 
+		NULL, 
+		D3DCLEAR_TARGET, 
+		D3DCOLOR_XRGB(255, 255, 255), 
+		1.0f, 
+		0);
 
+	m_3dDevice->BeginScene();
+	// ...
+	m_3dDevice->EndScene();
+
+	m_3dDevice->Present(
+		NULL,
+		NULL,
+		NULL,
+		NULL
+	);
 }
 
 // Render the scene.
@@ -60,5 +76,5 @@ void D3D9Window::OnRender()
 
 void D3D9Window::OnDestroy()
 {
-
+	m_3dDevice = nullptr;
 }
