@@ -67,7 +67,7 @@ int Win32Application::Run(DXBase* pBase, HINSTANCE hInstance, int nCmdShow)
 	return static_cast<char>(msg.wParam);
 }
 
-// Main message handler for the sample.
+// Main message handler.
 LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	DXBase* pBase = reinterpret_cast<DXBase*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
