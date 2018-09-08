@@ -22,7 +22,7 @@ void D3D9Window::LoadPipeline()
 {
 	D3DPRESENT_PARAMETERS d3dpp;    // create a struct to hold various device information
 	ZeroMemory(&d3dpp, sizeof(d3dpp));
-	d3dpp.Windowed = FALSE;
+	d3dpp.Windowed = TRUE;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;    // discard old frames
 	d3dpp.hDeviceWindow = Win32Application::GetHwnd();    // set the window to be used by Direct3D
 	d3dpp.BackBufferFormat = D3DFMT_X8R8G8B8;    // set the back buffer format to 32-bit
